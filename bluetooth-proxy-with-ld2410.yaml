@@ -132,26 +132,7 @@ ble_gateway:
   id: blegateway
   on_ble_advertise:
     then:    
-    #      - lambda: |-
-    #          ESP_LOGD("ble_adv", "New BLE device");
-    #          ESP_LOGD("ble_adv", "  tx_powers: %d", x.get_tx_powers().front());
-      #    ESP_LOGD("ble_adv", "  name: %s", x.get_name().c_str());
-      #    ESP_LOGD("ble_adv", "  Advertised service UUIDs:");
-      #    for (auto uuid : x.get_service_uuids()) {
-      #        ESP_LOGD("ble_adv", "    - %s", uuid.to_string().c_str());
-      #    }
-      #    ESP_LOGD("ble_adv", "  Advertised service data:");
-      #    for (auto data : x.get_service_datas()) {
-      #        ESP_LOGD("ble_adv", "    - %s: (length %i)", data.uuid.to_string().c_str(), data.data.size());
-      #    }
-      #    ESP_LOGD("ble_adv", "  Advertised manufacturer data:");
-      #    for (auto data : x.get_manufacturer_datas()) {
-      #        ESP_LOGD("ble_adv", "    - %s: (length %i)", data.uuid.to_string().c_str(), data.data.size());
-      #    }
-      #- if:
-        #  condition:
-        #    lambda: 'return x.get_name().length() > 3 or x.address_str() == "30:95:E3:E4:84:FB" ;'
-        #then:
+    
           - if:
               condition:
                 lambda: 'return pow(10,(-1.0*(id(measured_power).state) - x.get_rssi())/(10.0*(id(environmental_factor).state))) < (id(max_distance).state);'
