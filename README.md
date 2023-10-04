@@ -12,6 +12,7 @@ This project use esp32 with LD2410 sensor attached to enhance capabilities.
 ## How to install
 1.  Add the file ```bluetooth-proxy-with-ld2410.yaml``` to your esphome folder.
 you can rename the file and add a dot before the name to hide this file from esphome dashboard.
+
 ![esphome folder](/images/esphomefolder.png)
 
 
